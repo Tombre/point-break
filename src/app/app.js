@@ -91,11 +91,7 @@ export const App = connect(getSubscription)(React.createClass({
 		const app = this.props.app;
 
 		return <div>
-			<p>POINT BREEEAAAAAAK</p>
 			<div id="wrapper">
-
-				<Card />
-
 				{this.props.children && React.cloneElement(this.props.children, { app })}
 			</div>
 		</div>;
