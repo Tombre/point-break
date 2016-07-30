@@ -25,5 +25,4 @@ export default React.createClass({
 			<CardList alerts={this.state.alerts}/>
 		</div>
 	}
-
 });

@@ -22,16 +22,24 @@
 // Base Components
 @import "./components/component";
 @import "./components/card";
+<<<<<<< HEAD
 @import "./components/dialog";
 @import "./components/button";
 @import "./components/carousel";
 // @import "./components/image-slider";
+=======
+@import "./components/inputs";
+@import "./components/inputGroup";
+@import "./components/inputList";
+>>>>>>> 178b41846b9f58488303099b520417464b4ee478
 
 /*----------------------------------------------------------
     Regions
 ----------------------------------------------------------*/
 
-@import "./regions/footer";
+@import "./regions/header";
+@import "./regions/nav";
+@import "./regions/menu";
 
 /*----------------------------------------------------------
     layouts

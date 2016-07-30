@@ -9,8 +9,8 @@ import { find, where, pluck } from 'helper/mori';
 import { selectData, fetch, insert, setResponse } from 'store/data';
 import { selectErrorWhen, removeError, createError } from 'store/error';
 
-import Footer from 'app/common/Footer';
-
+import Header from 'app/common/Header';
+import Menu from 'app/common/Menu';
 
 /*----------------------------------------------------------
 Helper
@@ -87,6 +87,20 @@ export const App = connect(getSubscription)(React.createClass({
 		app: React.PropTypes.object,
 	},
 
+	getInitialState() {
+		return {
+			menuOpen: false
+		};
+	},
+
+	openMenu() {
+		this.setState({ menuOpen: true });
+	},
+
+	closeMenu() {
+		this.setState({ menuOpen: false });
+	},
+
 	render() {
 
 		const app = this.props.app;
@@ -97,15 +111,20 @@ export const App = connect(getSubscription)(React.createClass({
 			currentPath = 'discover';
 		} else if(this.props.location.pathname.indexOf('alerts') >= 0) {
 			currentPath = 'alerts';
+		} else if(this.props.location.pathname.indexOf('localfeed') >= 0) {
+			currentPath = 'localfeed';
 		} else {
 			currentPath = 'discover';
 		}
 
 		return <div>
+			{(() => {
+				if (this.state.menuOpen) return<Menu closeMenu={this.closeMenu} />;
+			})()}
+			<Header currentPath={currentPath} openMenu={this.openMenu} />
 			<div id="wrapper">
 				{this.props.children && React.cloneElement(this.props.children, { app })}
 			</div>
-			<Footer currentPath={currentPath} />
 		</div>;
 	}
 

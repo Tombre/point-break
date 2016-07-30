@@ -1,0 +1,33 @@
+
+.header {
+	position: relative;
+	z-index: 1;
+}
+
+.header__topzone {
+	padding: 17px 18px;
+	display: flex;
+	justify-content: space-between;
+	align-content: center;
+}
+
+.header__logo {
+	vertical-align: middle;
+	img {
+		display: inline-block;
+	}
+}
+
+.header__add {
+	width: 24px;
+	height: 24px;
+	background-image: url(/img/add.svg);
+	background-size: contain;
+}
+
+.header__info {
+	width: 24px;
+	height: 24px;
+	background-image: url(/img/info.svg);
+	background-size: contain;
+}

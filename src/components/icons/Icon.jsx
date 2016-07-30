@@ -8,7 +8,7 @@ Setup
 
 // get the spritesheet via ajax (this will hopefully be cached)
 const spriteSheetRequest = new Promise((resolve, reject) => {
-	request.get('/img/survey/sprites/symbol/svg/sprite.symbol.svg').end(function(error, response){
+	request.get('/img/sprites/symbol/svg/sprite.symbol.svg').end(function(error, response){
 
 			if (!_.isNull(error)) {
 				return reject(error);
@@ -30,7 +30,8 @@ export default React.createClass({
 		icon: React.PropTypes.string,
 		className: React.PropTypes.string,
 		width: React.PropTypes.number,
-		height: React.PropTypes.number
+		height: React.PropTypes.number,
+		viewBox: React.PropTypes.string
 	},
 
 	getInitialState() {
@@ -52,7 +53,7 @@ export default React.createClass({
 
 		let icon = `#${this.props.icon}`;
 
-		return <svg className={`icon-svg ${(this.props.className) || ''}`}>
+		return <svg className={`icon-svg ${(this.props.className) || ''}`} viewBox={this.props.viewBox}>
 			<use xlinkHref={icon} />
 		</svg>;
 		
