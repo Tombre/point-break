@@ -6,6 +6,11 @@
 	white-space: nowrap;
 	width: 32px;
 
+	&.dark:before,
+	&.dark:after {
+		background: #CECECE;
+	}
+
 	&:before, &:after {
 		background: #fff;
 		content: '';
