@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import ReactSwipe from 'react-swipe';
 import { Route } from 'react-router';
-import SwitchableContent from 'app/common/SwitchableContent';
 import BeachDetail from 'app/common/BeachDetail';
 import AlertDetail from 'app/common/AlertDetail';
 
@@ -34,9 +33,16 @@ const style = {
 	}
 }
 
-const CardDetail = React.createClass({
+export default React.createClass({
+
+	propTypes: {
+		params: React.PropTypes.object
+	},
+
 	render() {
-		const {page, alert, alertId} = this.props
+		
+		let alert = test_data.alerts[this.props.params.id];
+
 		return (
 			<div className="card-detail dialog">
 				<div className="dialog__header">
@@ -44,7 +50,7 @@ const CardDetail = React.createClass({
 						<a href="#" className="button__close">Close</a>
 					</div>
 					<div className="dialog__header--title">
-						{alert}
+						{alert.beach}
 					</div>
 					<div className="dialog__header--right">
 						<a href="#" className="button__add">Add Alert</a>
@@ -65,6 +71,3 @@ const CardDetail = React.createClass({
 	}
 
 });
-
-
-export default () => <CardDetail page={page} alert={alert} alertId={alertId} />
