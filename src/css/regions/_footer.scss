@@ -1,0 +1,36 @@
+.footer {
+	background: rgba(22,21,25,0.90);
+	height: 57px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+.footer .footer__nav-list {
+	margin: 0;
+	padding: 0;
+	display: flex;
+	height: 100%;
+	list-style: none;
+}
+
+.footer .footer__nav-list__item {
+
+	text-transform: uppercase;
+	text-align: center;
+	width: 50%;
+
+	&--active {
+		box-shadow: inset 0px -2px 0px 0px #0689FF;
+	}
+
+	a {
+		display: inline-block;
+		margin-top: 18px; 
+		color: white;
+		@include font-size(12px);
+		text-decoration: none;
+	}
+
+}
