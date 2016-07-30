@@ -120,9 +120,9 @@ export const middleware = store => next => action => {
 	params = action.payload;
 	url = params.url;
 
-	if (params.method !== 'GET') {
-		params.headers["X-CSRFToken"] = cookies.get('csrftoken');
-	}
+	// if (params.method !== 'GET') {
+	// 	params.headers["X-CSRFToken"] = cookies.get('csrftoken');
+	// }
 
 	// dispatch action to tell the state that the api request is running
 	store.dispatch(runningAPIRequest(params));

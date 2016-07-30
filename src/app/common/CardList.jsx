@@ -12,7 +12,7 @@ export default React.createClass({
 	render() {
 		return (
 			<div className="card-list">
-				{this.props.alerts.map(alert => <Card alert={alert} />)}
+				{this.props.alerts.map((alert, index) => <Card key={index} alert={alert} />)}
 			</div>
 		);
 	}
