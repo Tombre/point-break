@@ -90,6 +90,16 @@ export const App = connect(getSubscription)(React.createClass({
 	render() {
 
 		const app = this.props.app;
+		
+		let currentPath;
+
+		if (this.props.location.pathname.indexOf('discover') >= 0) {
+			currentPath = 'discover';
+		} else if(this.props.location.pathname.indexOf('alerts') >= 0) {
+			currentPath = 'alerts';
+		} else {
+			currentPath = 'discover';
+		}
 
 		return <div>
 			<div id="wrapper">
@@ -98,7 +108,7 @@ export const App = connect(getSubscription)(React.createClass({
 
 				{this.props.children && React.cloneElement(this.props.children, { app })}
 			</div>
-			<Footer />
+			<Footer currentPath={currentPath} />
 		</div>;
 	}
 

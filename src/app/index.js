@@ -48,8 +48,8 @@ const Root = React.createClass({
 				<Router history={browserHistory}>
 					<Route path="/" onEnter={this.loadSessionAndResources} component={App}>
 						<IndexRoute component={Create}/>
-						<Route path="Create" component={Create} />
-						<Route path="View" component={View} />
+						<Route path="discover" component={Create} />
+						<Route path="alerts" component={View} />
 					</Route>
 					<Route path="*" component={NotFoundPage} />
 				</Router>
