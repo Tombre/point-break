@@ -18,42 +18,56 @@ export default React.createClass({
 					</div>
 				</div>
 				<div className="dialog__body">
+
 					<TextInput placeholder='New Alert Title' type="large" />
 
 					<TextInput placeholder='Description of the alert' type="small" />
 
-					<div className="selectField">
-						<label>Location</label>
-						<select>
-							<option>1km near Cottesloe</option>
-							<option>2km near Cottesloe</option>
-							<option>5km near Cottesloe</option>
-							<option>10km near Cottesloe</option>
-							<option>20km near Cottesloe</option>
-						</select>
-					</div>
-
-					<div className="selectField">
-						<label>Skill Level</label>
-						<select>
-							<option>Beginner</option>
-							<option>Intermidiate</option>
-							<option>Advanced</option>
-						</select>
-					</div>
-
-					<div className="inputList">
-						<div className="inputList__item">
-							<label className="inputList__item__label">Activity</label>
-							<SelectInput className="inputList__item__input" options={['Surfing', 'Fishing']} />
+					<div className="form__row">
+						<div className="form__row--label">
+							<label>Location</label>
+						</div>
+						<div className="form__row--value">
+							<AlertLocation distance={["1km","2km","5km","10km","20km"]} />
 						</div>
 					</div>
 
-					<div className="selectField">
-						<label>Swell</label>
-						<select>
-							<option>1ft - 7ft</option>
-						</select>
+					<div className="form__row">
+						<div className="form__row--label">
+							<label>Skill Level</label>
+						</div>
+						<div className="form__row--value">	
+							<AlertSkill options={["Beginner"]} />
+						</div>
+					</div>
+
+					<AlertConditions options={['Custom Conditions', 'Like Past Conditions', 'Current Conditions']} />
+
+					<div className="form__row">
+						<div className="form__row--label">
+							<label>Swell</label>
+						</div>
+						<div className="form__row--value">
+							<AlertSwell min="1" max="7" />
+						</div>
+					</div>
+
+					<div className="form__row">
+						<div className="form__row--label">
+							<label>Tide</label>
+						</div>
+						<div className="form__row--value">
+							<AlertTide />
+						</div>
+					</div>
+
+					<div className="form__row">
+						<div className="form__row--label">
+							<label>Wind Direction</label>
+						</div>
+						<div className="form__row--value">
+							<AlertWind />
+						</div>
 					</div>
 
 				</div>
