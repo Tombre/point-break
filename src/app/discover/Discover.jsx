@@ -18,6 +18,14 @@ const test_data = {
 		{
 			name: 'EASY SURFING',
 			beach: 'COTTESLOE, WA'
+		},
+		{
+			name: 'LOWER TRESTLES',
+			beach: 'TRIGG BEACH, WA'
+		},
+		{
+			name: 'EASY SURFING',
+			beach: 'COTTESLOE, WA'
 		}
 	]
 };
@@ -56,17 +64,20 @@ export default connect(getSubscription, { loadDiscoverAlarms })(React.createClas
 
 	render() {
 
-		// {(() => {
-		// if (alerts.length) {
-		// 	return <CardList alerts={alerts}/>
-		// } else if (this.state.loaded === false) {
-		// 	<p style={{ color: 'white' }}>Loading beaches....</p>
-		// }
-		// return <p style={{ color: 'white' }}>No beaches found</p>
-		// })()}
-
 		let alerts = this.props.alerts || [];
+
 		return <div className="page--create">
+			<div className="filter filter--discover">
+				<div className="filter__item filter__item--active">
+					Nearby
+				</div>
+				<div className="filter__item">
+					Popular
+				</div>
+				<div className="filter__item">
+					Search
+				</div>
+			</div>
 			<CardList alerts={alerts}/>
 		</div>
 	}

@@ -24,7 +24,7 @@ export default React.createClass({
 			<div className="header__topzone">
 				<a href="#" className="header__info"></a>
 				<div className="header__logo">
-					<img src="/img/logo.png" width="146" height="33" />
+					<img src="/img/logo.png" width="30" height="30" />
 				</div>
 				<a onClick={this.handleAddClick} href="#" className="header__add"></a>
 			</div>
