@@ -10,6 +10,14 @@ const test_data = {
 		{
 			name: 'EASY SURFING',
 			beach: 'COTTESLOE, WA'
+		},
+		{
+			name: 'LOWER TRESTLES',
+			beach: 'TRIGG BEACH, WA'
+		},
+		{
+			name: 'EASY SURFING',
+			beach: 'COTTESLOE, WA'
 		}
 	]
 };
