@@ -48,6 +48,12 @@ const Root = React.createClass({
 Render
 ----------------------------------------------------------*/
 
+// <IndexRoute component={AlertsPage}/>
+// <Route path="alerts" component={AlertsPage}>
+// <Route path="alerts/:alertid" component={AlertsDetail} />
+// <Route path="discover" component={DiscoverPage} />
+// <Route path="push" component={PushPage} />
+
 ReactDOM.render(
 	<Root store={store} />,
 	document.getElementById('app')
