@@ -23,12 +23,16 @@
 
 	&--active {
 		box-shadow: inset 0px -2px 0px 0px #0689FF;
+		a {
+			opacity: 1 !important;
+		}
 	}
 
 	a {
 		display: inline-block;
 		margin-top: 18px; 
 		color: white;
+		opacity: 0.3;
 		@include font-size(12px);
 		text-decoration: none;
 	}
