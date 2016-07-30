@@ -1,0 +1,34 @@
+.dialog {
+	height: 100vh;
+}
+
+.dialog__header {
+	height: 55px;
+	position: relative;
+}
+
+.dialog__header--left {
+	left: 16px;
+	position: absolute;
+	top: 13px;
+}
+
+.dialog__header--right {
+	left: auto;
+	right: 16px;
+	position: absolute;
+	top: 16px;
+}
+
+.dialog__header--title {
+	color: #fff;
+	font-size: 16px;
+	font-weight: bold;
+	padding: 15px 60px 0;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.dialog__body {
+	
+}
