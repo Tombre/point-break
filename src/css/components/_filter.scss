@@ -1,0 +1,26 @@
+.filter {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  margin: 0 auto;
+  justify-content: space-around;
+  width: 80%;
+  margin-bottom: 1rem;
+}
+
+.filter__item {
+  padding: 0.3rem 0.5rem;
+  width: 100%;
+  color: $colour-grey;
+  border: 1px solid transparent;
+  text-align: center;
+  font-weight: 700;
+  font-size: 11px;
+  text-transform: uppercase;
+}
+
+.filter__item--active {
+  border: 1px solid $colour-white;
+  color: $colour-white;
+  border-radius: 50px;
+}

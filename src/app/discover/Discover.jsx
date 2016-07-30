@@ -48,8 +48,21 @@ export default connect(getSubscription, { loadDiscoverAlarms })(React.createClas
 	},
 
 	render() {
+
 		let alerts = this.props.alerts || [];
+
 		return <div className="page--create">
+			<div className="filter filter--discover">
+				<div className="filter__item filter__item--active">
+					Nearby
+				</div>
+				<div className="filter__item">
+					Popular
+				</div>
+				<div className="filter__item">
+					Search
+				</div>
+			</div>
 			<CardList alerts={alerts}/>
 		</div>
 	}
