@@ -9,7 +9,8 @@ import { find, where, pluck } from 'helper/mori';
 import { selectData, fetch, insert, setResponse } from 'store/data';
 import { selectErrorWhen, removeError, createError } from 'store/error';
 
-import Card from 'app/common/Card';
+import Footer from 'app/common/Footer';
+
 
 /*----------------------------------------------------------
 Helper
@@ -94,6 +95,7 @@ export const App = connect(getSubscription)(React.createClass({
 			<div id="wrapper">
 				{this.props.children && React.cloneElement(this.props.children, { app })}
 			</div>
+			<Footer />
 		</div>;
 	}
 

@@ -11,6 +11,14 @@ import NotFoundPage from './error/NotFoundPage.jsx';
 import Create from 'app/create/Create';
 import View from 'app/view/View';
 
+import cookies from 'js-cookie';
+
+// const cookie = cookies.get('pointbreak_auth');
+
+// if (!cookie) {
+// 	window.location = 'http://192.168.2.110:4001/auth/github';
+// }
+
 /*----------------------------------------------------------
 Store
 ----------------------------------------------------------*/
