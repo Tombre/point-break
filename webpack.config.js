@@ -63,7 +63,7 @@ module.exports = {
 	context: path.join(process.env.PWD, 'src'),
 
 	entry: {
-		'survey': 'app/index',
+		'app': 'app/index',
 	},
 
 	output: {
