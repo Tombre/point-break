@@ -48,10 +48,10 @@ const Root = React.createClass({
 				let {pointbreak_auth} = JSON.parse(response.text);
 				cookies.set('pointbreak_auth', pointbreak_auth);
 
-				request.get('http://192.168.2.110:4001/api/alarm')
-					.end((err, res) => {
-						console.log(res);
-					})
+				// request.get('http://192.168.2.110:4001/api/alarm')
+				// 	.end((err, res) => {
+				// 		console.log(res);
+				// 	})
 
 				callback();
 			});
