@@ -7,7 +7,13 @@ import Nav from 'app/common/Nav';
 export default React.createClass({
 	
 	propTypes: {
-		currentPath: React.PropTypes.string
+		currentPath: React.PropTypes.string,
+		openMenu: React.PropTypes.func
+	},
+
+	handleAddClick(e) {
+		e.preventDefault();
+		this.props.openMenu();
 	},
 
 	render() {
@@ -20,7 +26,7 @@ export default React.createClass({
 				<div className="header__logo">
 					<img src="/img/logo.png" width="146" height="33" />
 				</div>
-				<Link to={`/alerts/new`} className="header__add"></Link>
+				<a onClick={this.handleAddClick} href="#" className="header__add"></a>
 			</div>
 			<Nav currentPath={currentPath} />
 		</div>
