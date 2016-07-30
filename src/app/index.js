@@ -45,19 +45,11 @@ const Root = React.createClass({
 		request
 			.get('http://192.168.2.110:4001/auth/hack/')
 			.end((error, response) => {
-				if (error) return;
+				if (error) return callback();
 				let {pointbreak_auth} = JSON.parse(response.text);
 				cookies.set('pointbreak_auth', pointbreak_auth);
-
-				// request.get('http://192.168.2.110:4001/api/alarm')
-				// 	.end((err, res) => {
-				// 		console.log(res);
-				// 	})
-
 				callback();
 			});
-
-		// let { dispatch, getState } = this.props.store;
 		
 	},
 

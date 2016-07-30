@@ -1,31 +1,29 @@
 import React from 'react';
+import mori from 'mori';
 import ReactDOM from 'react-dom';
 import ReactSwipe from 'react-swipe';
+import { find, where, pluck } from 'helper/mori';
 import { Route } from 'react-router';
+import { selectData } from 'store/data';
+import connect from 'store/connect';
 import BeachDetail from 'app/common/BeachDetail';
 import AlertDetail from 'app/common/AlertDetail';
 
 /*----------------------------------------------------------
-Component
+Subscription
 ----------------------------------------------------------*/
 
-const page = 1;
+function getSubscription(store, props) {
+	return store.subscribe(state => {
+		find(selectData.alarm({ id: props.params.id }, state))
+	}).map(alerts => {
+		return mori.hashMap('alert', mori.vals(alerts));
+	});
+}
 
-const alertId = 'dsfasdf';
-const test_data = {
-	alerts: [
-		{
-			name: 'LOWER TRESTLES',
-			beach: 'TRIGG BEACH, WA'
-		},
-		{
-			name: 'EASY SURFING',
-			beach: 'COTTESLOE, WA'
-		}
-	]
-};
-
-const alert = test_data.alerts[alertId];
+/*----------------------------------------------------------
+Component
+----------------------------------------------------------*/
 
 const style = {
 	container: {
@@ -33,16 +31,15 @@ const style = {
 	}
 }
 
-export default React.createClass({
+export default connect()(React.createClass({
 
 	propTypes: {
-		params: React.PropTypes.object
+		params: React.PropTypes.object,
+		alert: React.PropTypes.object
 	},
 
 	render() {
-		
-		let alert = test_data.alerts[this.props.params.id];
-
+		let alert = this.props.alert;
 		return (
 			<div className="card-detail dialog">
 				<div className="dialog__header">
@@ -70,4 +67,4 @@ export default React.createClass({
 		);
 	}
 
-});
+}));
