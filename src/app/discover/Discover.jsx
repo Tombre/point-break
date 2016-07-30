@@ -27,7 +27,7 @@ Subscription & PropsMaps
 ----------------------------------------------------------*/
 
 function getSubscription(store, props) {
-	return store.subscribe(selectData.alarm).map(alerts => {
+	return store.subscribe(selectData.location).map(alerts => {
 		return mori.hashMap('alerts', mori.vals(alerts));
 	});
 }
@@ -43,11 +43,28 @@ export default connect(getSubscription, { loadDiscoverAlarms })(React.createClas
 		alerts: React.PropTypes.array
 	},
 
+	getInitialState() {
+		return {
+			loaded: false
+		};
+	},
+
 	componentDidMount() {
+		let setLoaded = () => this.setState({ loaded: true });
 		this.props.loadDiscoverAlarms();
 	},
 
 	render() {
+
+		// {(() => {
+		// if (alerts.length) {
+		// 	return <CardList alerts={alerts}/>
+		// } else if (this.state.loaded === false) {
+		// 	<p style={{ color: 'white' }}>Loading beaches....</p>
+		// }
+		// return <p style={{ color: 'white' }}>No beaches found</p>
+		// })()}
+
 		let alerts = this.props.alerts || [];
 		return <div className="page--create">
 			<CardList alerts={alerts}/>
