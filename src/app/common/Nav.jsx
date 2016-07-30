@@ -15,6 +15,7 @@ const Component = React.createClass({
 			<ul className="nav__nav-list">
 				<li className={`nav__nav-list__item ` + (currentPath === 'discover' ? `nav__nav-list__item--active` : '')}><Link to={`/discover/`}>Discover</Link></li>
 				<li className={`nav__nav-list__item ` + (currentPath === 'alerts' ? `nav__nav-list__item--active`: '')}><Link to={`/alerts/`}>My Alerts</Link></li>
+				<li className={`nav__nav-list__item ` + (currentPath === 'localfeed' ? `nav__nav-list__item--active`: '')}><Link to={`/localfeed/`}>Local Feed</Link></li>
 			</ul>
 		</div>
 	}

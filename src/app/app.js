@@ -96,6 +96,8 @@ export const App = connect(getSubscription)(React.createClass({
 			currentPath = 'discover';
 		} else if(this.props.location.pathname.indexOf('alerts') >= 0) {
 			currentPath = 'alerts';
+		} else if(this.props.location.pathname.indexOf('localfeed') >= 0) {
+			currentPath = 'localfeed';
 		} else {
 			currentPath = 'discover';
 		}
