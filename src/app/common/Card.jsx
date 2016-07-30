@@ -6,9 +6,10 @@ Component
 
 export default React.createClass({
 	propTypes: {
-		alert: React.PropTypes.array
+		alert: React.PropTypes.object
 	},
 	render() {
+		let { alert } = this.props;
 		return (
 			<div className="card">
 				<div className="card__bg">
@@ -17,7 +18,7 @@ export default React.createClass({
 
 					<div className="card__head">
 						<div className="card__heading card__heading--center">
-							LOWER TRESTLES
+							{alert.title}
 						</div>
 					</div>
 

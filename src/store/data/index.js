@@ -88,7 +88,7 @@ export function destory(collectionName, id, sync = true) {
 
 // Creates an action which runs a query for a particular record.
 const FETCH = 'DATA_FETCH';
-export function fetch(collectionName, query, options = {}) {
+export function fetch(collectionName, query = {}, options = {}) {
 		
 	let action = {
 		type : FETCH,
@@ -214,7 +214,7 @@ export const fetchDataMiddleware = store => next => action => {
 
 	let options = action.payload;
 	let params = {
-		url : '/api' + schema[options.collectionName].endpoint,
+		url : 'http://192.168.2.110:4001/api' + schema[options.collectionName].endpoint,
 		query : options.query,
 		method : 'GET'
 	};
@@ -236,7 +236,7 @@ export const fetchDataMiddleware = store => next => action => {
 			let models, body;
 
 			body = response.body;
-			models = body.id ? [body] : body.results;
+			models = body.id ? [body] : ( _.isArray(body) ? body : body.results);
 
 			// Add all the responses to the store by dispatching the setResponse action
 			store.dispatch(setResponse(action.payload.collectionName, models));
