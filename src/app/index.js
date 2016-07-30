@@ -8,8 +8,8 @@ import { createStore, Provider } from 'store';
 import { App as App, reducer as APP } from './app';
 
 import NotFoundPage from './error/NotFoundPage.jsx';
-import Create from 'app/create/Create';
-import View from 'app/view/View';
+import Alerts from 'app/alerts/Alerts';
+import Discover from 'app/discover/Discover';
 
 import cookies from 'js-cookie';
 
@@ -48,8 +48,8 @@ const Root = React.createClass({
 				<Router history={browserHistory}>
 					<Route path="/" onEnter={this.loadSessionAndResources} component={App}>
 						<IndexRoute component={Create}/>
-						<Route path="discover" component={Create} />
-						<Route path="alerts" component={View} />
+						<Route path="discover" component={Discover} />
+						<Route path="alerts" component={Alerts} />
 					</Route>
 					<Route path="*" component={NotFoundPage} />
 				</Router>
