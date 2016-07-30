@@ -3,7 +3,7 @@
 -----------------------------------------------------*/
 
 body {
-	
+	font-family: 'Open Sans', sans-serif;
 }
 
 #app {
@@ -13,4 +13,8 @@ body {
 	height: 667px;
 	background-color: $colour-dark;
 	position: relative;
+}
+
+#wrapper {
+	padding: 1rem;
 }
