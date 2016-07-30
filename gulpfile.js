@@ -44,7 +44,6 @@ gulp.task('build', function(callback) {
 });
 
 gulp.task('serve', ['build'], function () {
-	gulp.watch(['./src/**/*.js', './src/**/*.jsx', './src/img/**/*.svg'], { interval: 500 }, ['app']);
 	gulp.watch('./src/index.html', { interval: 500 }, ['renderStatic']);
 	gulp.watch(['./src/css/**/*.scss'], { interval: 500 }, ['styles']);
 	gulp.watch(['./src/img/**/*'], { interval: 500 }, ['images']);

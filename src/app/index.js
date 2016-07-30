@@ -10,6 +10,7 @@ import { App as App, reducer as APP } from './app';
 import NotFoundPage from './error/NotFoundPage.jsx';
 import Alerts from 'app/alerts/Alerts';
 import Discover from 'app/discover/Discover';
+import NewAlert from 'app/newAlert/NewAlert';
 
 import cookies from 'js-cookie';
 
@@ -51,6 +52,7 @@ const Root = React.createClass({
 						<Route path="discover" component={Discover} />
 						<Route path="alerts" component={Alerts} />
 					</Route>
+					<Route path="alerts/new" component={NewAlert} />
 					<Route path="*" component={NotFoundPage} />
 				</Router>
 			</Provider>

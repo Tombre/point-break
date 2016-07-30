@@ -22,12 +22,16 @@
 // Base Components
 @import "./components/component";
 @import "./components/card";
+@import "./components/inputs";
+@import "./components/inputGroup";
+@import "./components/inputList";
 
 /*----------------------------------------------------------
     Regions
 ----------------------------------------------------------*/
 
-@import "./regions/footer";
+@import "./regions/header";
+@import "./regions/nav";
 
 /*----------------------------------------------------------
     layouts

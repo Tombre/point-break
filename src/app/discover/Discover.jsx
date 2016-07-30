@@ -1,5 +1,5 @@
 import React from 'react';
-import CardList from 'app/discover/CardList';
+// import CardList from 'app/discover/CardList';
 
 const test_data = {
 	alerts: [
@@ -22,8 +22,13 @@ export default React.createClass({
 
 	render() {
 		return <div className="page--create">
-			<CardList alerts={this.state.alerts}>
 		</div>
 	}
+
+	// renderExample() {
+	// 	return <div className="page--create">
+	// 		<CardList alerts={this.state.alerts}>
+	// 	</div>
+	// }
 
 });
