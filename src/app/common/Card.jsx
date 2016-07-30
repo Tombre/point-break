@@ -5,12 +5,14 @@ Component
 ----------------------------------------------------------*/
 
 export default React.createClass({
-
+	propTypes: {
+		alert: React.PropTypes.array
+	},
 	render() {
 		return (
 			<div className="card">
 				<div className="card__bg">
-
+					{alert}
 				</div>
 				<div className="card__content">
 					<div className="card__head">
