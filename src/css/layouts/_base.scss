@@ -3,10 +3,13 @@
 -----------------------------------------------------*/
 
 body {
-	background-color: $colour-lightGrey;
+	
 }
 
 #app {
 	overflow: hidden;
-	max-width: 100%;
+	margin: calc((100vh - 667px)/2) auto;
+	width: 375px;
+	height: 667px;
+	background-color: $colour-dark;
 }

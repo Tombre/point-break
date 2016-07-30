@@ -8,6 +8,8 @@ import { createStore, Provider } from 'store';
 import { App as App, reducer as APP } from './app';
 
 import NotFoundPage from './error/NotFoundPage.jsx';
+import Create from 'app/create/Create';
+import View from 'app/view/View';
 
 /*----------------------------------------------------------
 Store
@@ -36,7 +38,11 @@ const Root = React.createClass({
 		return (
 			<Provider store={store}>
 				<Router history={browserHistory}>
-					<Route path="/" onEnter={this.loadSessionAndResources} component={App} />
+					<Route path="/" onEnter={this.loadSessionAndResources} component={App}>
+						<IndexRoute component={Create}/>
+						<Route path="Create" component={Create} />
+						<Route path="View" component={View} />
+					</Route>
 					<Route path="*" component={NotFoundPage} />
 				</Router>
 			</Provider>

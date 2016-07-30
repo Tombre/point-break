@@ -51,10 +51,10 @@ function createInitialState() {
 
 export const reducer = createReducer([SET_LOADING, SET_LOADED], function(state, action) {
 	switch (action.type) {
-		case SET_LOADING: 
+		case SET_LOADING:
 			return mori.assoc(state, 'isLoaded', false);
 			break;
-		case SET_LOADED: 
+		case SET_LOADED:
 			return mori.assoc(state, 'isLoaded', true);
 			break;
 		default:
@@ -74,7 +74,7 @@ Subscription & PropsMaps
 
 function getSubscription(store, props) {
 	return store.subscribe(selectApp);
-} 
+}
 
 /*----------------------------------------------------------
 App Component
@@ -87,11 +87,10 @@ export const App = connect(getSubscription)(React.createClass({
 	},
 
 	render() {
-		
+
 		const app = this.props.app;
 
 		return <div>
-			<p>POINT BREEEAAAAAAK</p>
 			<div id="wrapper">
 
 				<Card />
