@@ -16,13 +16,15 @@
     "lodash": "^4.14.0",
     "makerule": "^1.0.3",
     "mori": "^0.3.2",
-    "react": "^15.0.1",
+    "react": "^15.3.0",
     "react-dom": "^15.0.1",
     "react-redux": "^4.4.2",
     "react-router": "^2.3.0",
+    "react-swipe": "^5.0.3",
     "react-tappable": "^0.8.1",
     "redux": "^3.4.0",
     "superagent": "^1.8.3",
+    "swipe-js-iso": "^2.0.3",
     "webpack-hot-middleware": "^2.12.2"
   },
   "scripts": {

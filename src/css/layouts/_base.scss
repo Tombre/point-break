@@ -3,14 +3,19 @@
 -----------------------------------------------------*/
 
 body {
-	
+	font-family: 'Open Sans', sans-serif;
 }
 
 #app {
 	overflow: hidden;
-	margin: calc((100vh - 667px)/2) auto;
-	width: 375px;
+	margin: 0 auto;
+	max-width: 375px;
 	height: 667px;
 	background-color: $colour-dark;
 	position: relative;
+	width: 100%;
+}
+
+#wrapper {
+	padding: 1rem;
 }

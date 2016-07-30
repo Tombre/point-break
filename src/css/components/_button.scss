@@ -1,0 +1,51 @@
+.button__close {
+	display: block;
+	height: 32px;
+	overflow: hidden;
+	text-indent: 100%;
+	white-space: nowrap;
+	width: 32px;
+
+	&:before, &:after {
+		background: #fff;
+		content: '';
+		height: 20px;
+		left: 16px;
+		position: absolute;
+		top: 4px;
+		width: 1px;
+	}
+
+	&:before {
+		transform: rotate(45deg);
+	}
+
+	&:after {
+		transform: rotate(-45deg);
+	}
+}
+
+.button__add {
+	border: 1px solid #fff;
+	border-radius: 50%;
+	display: block;
+	height: 21px;
+	overflow: hidden;
+	text-indent: 100%;
+	white-space: nowrap;
+	width: 21px;
+
+	&:before, &:after {
+		background: #fff;
+		content: '';
+		height: 11px;
+		left: 11px;
+		position: absolute;
+		top: 6px;
+		width: 1px;
+	}
+
+	&:before {
+		transform: rotate(90deg);
+	}
+}
