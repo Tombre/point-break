@@ -14,6 +14,7 @@ import NewAlert from 'app/newAlert/NewAlert';
 import LocalFeed from 'app/localFeed/LocalFeed';
 
 import cookies from 'js-cookie';
+import request from 'superagent';
 
 // const cookie = cookies.get('pointbreak_auth');
 
@@ -39,8 +40,24 @@ const Root = React.createClass({
 	},
 
 	loadSessionAndResources: function(nextState, replace, callback) {
-		let { dispatch, getState } = this.props.store;
-		callback();
+
+		request
+			.get('http://192.168.2.110:4001/auth/hack/')
+			.end((error, response) => {
+				if (error) return;
+				let {pointbreak_auth} = JSON.parse(response.text);
+				cookies.set('pointbreak_auth', pointbreak_auth);
+
+				request.get('http://192.168.2.110:4001/api/alarm')
+					.end((err, res) => {
+						console.log(res);
+					})
+
+				callback();
+			});
+
+		// let { dispatch, getState } = this.props.store;
+		
 	},
 
 	render: function() {
