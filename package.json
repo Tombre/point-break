@@ -9,6 +9,7 @@
   ],
   "dependencies": {
     "d.js": "^0.7.3",
+    "express": "^4.14.0",
     "fs-extra": "^0.26.5",
     "js-cookie": "^2.1.2",
     "kefir": "^3.2.6",
@@ -24,7 +25,9 @@
     "superagent": "^1.8.3"
   },
   "scripts": {
-      "dev" : "cd ./build && python -m SimpleHTTPServer 4000"
+    "start": "node server/index.js",
+    "build": "gulp build",
+    "watch": "gulp"
   },
   "main": "app.js",
   "repository": "",
