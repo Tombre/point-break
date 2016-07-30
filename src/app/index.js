@@ -47,7 +47,7 @@ const Root = React.createClass({
 			<Provider store={store}>
 				<Router history={browserHistory}>
 					<Route path="/" onEnter={this.loadSessionAndResources} component={App}>
-						<IndexRoute component={Create}/>
+						<IndexRoute component={Discover}/>
 						<Route path="discover" component={Discover} />
 						<Route path="alerts" component={Alerts} />
 					</Route>

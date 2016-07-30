@@ -103,9 +103,6 @@ export const App = connect(getSubscription)(React.createClass({
 
 		return <div>
 			<div id="wrapper">
-
-				<Card />
-
 				{this.props.children && React.cloneElement(this.props.children, { app })}
 			</div>
 			<Footer currentPath={currentPath} />
