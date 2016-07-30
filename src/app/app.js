@@ -9,8 +9,7 @@ import { find, where, pluck } from 'helper/mori';
 import { selectData, fetch, insert, setResponse } from 'store/data';
 import { selectErrorWhen, removeError, createError } from 'store/error';
 
-import Footer from 'app/common/Footer';
-
+import Header from 'app/common/Header';
 
 /*----------------------------------------------------------
 Helper
@@ -102,10 +101,10 @@ export const App = connect(getSubscription)(React.createClass({
 		}
 
 		return <div>
+			<Header currentPath={currentPath} />
 			<div id="wrapper">
 				{this.props.children && React.cloneElement(this.props.children, { app })}
 			</div>
-			<Footer currentPath={currentPath} />
 		</div>;
 	}
 

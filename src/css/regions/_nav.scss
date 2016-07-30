@@ -1,13 +1,9 @@
-.footer {
-	background: rgba(22,21,25,0.90);
+.nav {
+	background: #2C2B2F;
 	height: 57px;
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	right: 0;
 }
 
-.footer .footer__nav-list {
+.nav .nav__nav-list {
 	margin: 0;
 	padding: 0;
 	display: flex;
@@ -15,13 +11,15 @@
 	list-style: none;
 }
 
-.footer .footer__nav-list__item {
+.nav .nav__nav-list__item {
 
 	text-transform: uppercase;
 	text-align: center;
 	width: 50%;
+	background-color: #242327;
 
 	&--active {
+		background-color: #2C2B2F;
 		box-shadow: inset 0px -2px 0px 0px #0689FF;
 		a {
 			opacity: 1 !important;
