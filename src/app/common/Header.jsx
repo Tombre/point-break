@@ -22,7 +22,7 @@ export default React.createClass({
 
 		return <div className="header">
 			<div className="header__topzone">
-				<Link to="/info/" className="header__info" />
+				<Link to={"/info"} className="header__info" />
 				<div className="header__logo">
 					<img src="/img/logo.png" width="30" height="30" />
 				</div>
