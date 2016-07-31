@@ -16,18 +16,18 @@ export function postNewAlerts(settings) {
 	return function(dispatch, getState) {
 
 		let toDispatch = _.assign({
-			"title": "Knarly Trigg",  
+			"title": "Test",  
 			"description": "",
 			"location" : [1, 2],
-			"location_range" : 50,
-			"wind_speed": 60,
-			"wind_direction": 60,
-			"rain": 9,
-			"temp": 20,
-			"cloud": 8,
-			"swell_direction": 342,
-			"swell_period": 32,
-			"tide": 16
+			"location_range" : 20,
+			"wind_speed": [1, 20],
+			"wind_direction": [60, 80],
+			"rain": [6, 9],
+			"temp": [1, 20],
+			"cloud": [8, 10],
+			"swell_direction": [10, 342],
+			"swell_period": [6, 32],
+			"tide": [4, 16]
 		}, settings)
 
 		var request = dispatch(insert('alarm', toDispatch));

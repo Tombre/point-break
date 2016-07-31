@@ -40,7 +40,7 @@ export default withRouter(connect(null, { getLocation, postNewAlerts })(React.cr
 
 		let onComplete = this.props.router.push(`/alerts/`);
 
-		this.props.postNewAlerts(this.state)
+		this.props.postNewAlerts()
 			.then(onComplete, onComplete);
 	},
 

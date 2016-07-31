@@ -56,7 +56,6 @@ export function getLocation() {
 		return new Promise((resolve, reject) => {
 			if (navigator.geolocation) {
 				navigator.geolocation.getCurrentPosition(res => {
-					console.log('he', res);
 					let { latitude, longitude } = res.coords;
 					dispatch(setLocation(latitude, longitude ));
 					resolve({latitude, longitude });
