@@ -28,7 +28,7 @@ export default withRouter(connect(null, { getLocation, postNewAlerts })(React.cr
 			"cloud": [8, 10],
 			"swell_direction": [10, 342],
 			"swell_period": [6, 32],
-			"tide": [4, 16]
+			"tide": [1, 4]
 		};
 	},
 
