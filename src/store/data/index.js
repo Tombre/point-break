@@ -256,7 +256,7 @@ export const saveChangesMiddleware = store => next => action => {
 	next(action);
 
 	let params = {
-		url : '/api' + schema[action.payload.collectionName].endpoint
+		url : 'http://192.168.2.110:4001/api' + schema[action.payload.collectionName].endpoint
 	};
 
 	switch (action.type) {
@@ -279,8 +279,13 @@ export const saveChangesMiddleware = store => next => action => {
 	return store.dispatch(callAPI(params))
 		.then(response => {
 
+			let models, body;
+
+			body = response.body;
+			models = body.id ? [body] : ( _.isArray(body) ? body : body.results);
+
 			if ([INSERT, UPDATE].indexOf(action.type) >= 0) {
-				store.dispatch(setResponse(action.payload.collectionName, response.body));
+				store.dispatch(setResponse(action.payload.collectionName, models));
 			} else if (action.type === DESTROY) {
 				store.dispatch(destory(action.payload.collectionName, response.body.id, false))
 			}

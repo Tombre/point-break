@@ -1,0 +1,39 @@
+import React from 'react';
+
+export default React.createClass({
+
+	propTypes: {
+		type: React.PropTypes.string,
+		placeholder: React.PropTypes.string,
+		value: React.PropTypes.string
+	},
+
+	getInitialState : function() {
+		return {
+			value : this.props.value || ""
+		};
+	},
+
+	handleOnChange(e) {
+		let value = e.target.value;
+		this.setState({ value });
+	},
+
+	render() {
+		let className;
+		
+		switch(this.props.type) {
+			case 'large':
+				className = 'input__largeText';
+				break;
+			case 'normal':
+				className = 'input__text';
+				break;
+			default:
+				className = 'input__text';
+		}
+
+		return <input type="date" onChange={ this.handleOnChange } className={className} value={this.state.value} placeholder={this.props.placeholder} />
+	}
+
+});

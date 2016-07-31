@@ -30,5 +30,6 @@
 }
 
 .dialog__body {
-	
+	height: calc(100vh - 55px);
+	overflow: scroll;
 }

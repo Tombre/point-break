@@ -5,10 +5,11 @@ Text
 input[type="text"] {
 	border: none;
 	background-color: transparent;
-	color: #5D5D5D;
+	color: #344048;
+	outline: none;
 	transition: all 0.2 ease-out;
 	&:focus {
-		color: white;
+		color: black;
 	}
 }
 
@@ -17,7 +18,8 @@ Regular Text
 ----------------------------------------------------------*/
 
 .input__text {
-	padding: 2px;
+	// padding: 2px;
+	padding: 0;
 	@include font-size(20px);
 	font-weight: regular;
 }
@@ -27,7 +29,8 @@ Large Text
 ----------------------------------------------------------*/
 
 .input__largeText {
-	padding: 4px;
+	// padding: 4px;
+	padding: 0;
 	@include font-size(40px);
 	font-weight: bold;
 }

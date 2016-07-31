@@ -84,7 +84,7 @@ export default function connect(getSubscription, mapDispatchToProps, mergeProps)
 				if (_.isFunction(mapDispatchToProps) || _.isObject(mapDispatchToProps)) {
 					dispatchProps = _.isFunction(mapDispatchToProps) ? mapDispatchToProps(store) : _.mapValues(mapDispatchToProps, fn => {
 						return function() {
-							store.dispatch(fn(...arguments));
+							return store.dispatch(fn(...arguments));
 						};
 					});
 				} else {
