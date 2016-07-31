@@ -27,9 +27,20 @@
 	padding: 15px 60px 0;
 	text-align: center;
 	text-transform: uppercase;
+
+	&.has-subheading {
+		padding: 7px 60px 0;
+	}
+}
+
+.dialog__header--subtitle {
+	font-size: 12px;
+	font-weight: 400;
+	text-transform: none;
 }
 
 .dialog__body {
 	height: calc(100vh - 55px);
 	overflow: scroll;
+	padding: 20px;
 }
