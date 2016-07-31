@@ -15,7 +15,7 @@ export default withRouter(React.createClass({
 
 	handleCardClick() {
 		// console.log(this..alert);
-		// this.props.router.push(`/alerts/${this.props.alert.id}/`);
+		this.props.router.push(`/alerts/${this.props.alert.id}/`);
 	},
 
 	getWindSpeed(range) {
