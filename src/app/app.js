@@ -60,7 +60,7 @@ export function getLocation() {
 					dispatch(setLocation(latitude, longitude ));
 					resolve({latitude, longitude });
 				}, err => {
-					alert('error loading geoloaction')
+					// alert('error loading geoloaction')
 					reject(err);
 				});
 			}
