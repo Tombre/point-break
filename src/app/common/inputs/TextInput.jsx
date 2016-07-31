@@ -5,7 +5,8 @@ export default React.createClass({
 	propTypes: {
 		type: React.PropTypes.string,
 		placeholder: React.PropTypes.string,
-		value: React.PropTypes.string
+		value: React.PropTypes.string,
+		onChange: React.PropTypes.func
 	},
 
 	getInitialState : function() {
@@ -17,6 +18,7 @@ export default React.createClass({
 	handleOnChange(e) {
 		let value = e.target.value;
 		this.setState({ value });
+		this.props.onChange(value);
 	},
 
 	render() {

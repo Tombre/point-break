@@ -108,6 +108,10 @@
   background-color: #D0021B;
 }
 
+.card__difficulty-tag--warning {
+  background-color: $colour-orange;
+}
+
 .card__info {
   width: 34%;
   display: flex;
