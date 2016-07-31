@@ -7,4 +7,7 @@ export const schema = {
 	"location": {
 		endpoint: '/location/'
 	},
+	"feed": {
+		endpoint: '/feed/'
+	}
 };
