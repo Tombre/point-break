@@ -1,6 +1,7 @@
 import React from 'react';
 import mori from 'mori';
 import { find, where, pluck } from 'helper/mori';
+import { Link } from 'react-router';
 import { Route } from 'react-router';
 import { selectData } from 'store/data';
 import connect from 'store/connect';
@@ -39,7 +40,7 @@ export default connect()(React.createClass({
 		return <div className="card-detail dialog">
 				<div className="dialog__header">
 					<div className="dialog__header--left">
-						<a href="#" className="button__close">Close</a>
+						<Link to={"/alerts"} className="button__close">Close</Link>
 					</div>
 					<div className="dialog__header--title has-subheading">
 						Trigg Beach
