@@ -4,4 +4,7 @@ export const schema = {
 	"alarm": {
 		endpoint: '/alarm/'
 	},
+	"location": {
+		endpoint: '/location/'
+	},
 };

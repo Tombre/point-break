@@ -40,17 +40,50 @@ export function setLoaded() {
 	};
 }
 
+// Set the app state to loaded
+const SET_LOCATION = 'APP_SET_LOCATION';
+export function setLocation(lat, long) {
+	return {
+		type : SET_LOCATION,
+		payload : { lat, long }
+	};
+}
+
+const GET_LOCATION='APP_GET_LOCATION';
+export function getLocation() {
+	return function(dispatch, getState) {
+
+		return new Promise((resolve, reject) => {
+			if (navigator.geolocation) {
+				navigator.geolocation.getCurrentPosition(res => {
+					console.log('he', res);
+					let { latitude, longitude } = res.coords;
+					dispatch(setLocation(latitude, longitude ));
+					resolve({latitude, longitude });
+				}, err => {
+					alert('error loading geoloaction')
+					reject(err);
+				});
+			}
+		});
+	}
+}
+
 /*----------------------------------------------------------
 Reducer
 ----------------------------------------------------------*/
 
 function createInitialState() {
 	return mori.toClj({
-		isLoaded : false
+		isLoaded : false,
+		location: {
+			lat: null,
+			long: null
+		}
 	});
 }
 
-export const reducer = createReducer([SET_LOADING, SET_LOADED], function(state, action) {
+export const reducer = createReducer([SET_LOADING, SET_LOADED, SET_LOCATION], function(state, action) {
 	switch (action.type) {
 		case SET_LOADING:
 			return mori.assoc(state, 'isLoaded', false);
@@ -58,6 +91,8 @@ export const reducer = createReducer([SET_LOADING, SET_LOADED], function(state, 
 		case SET_LOADED:
 			return mori.assoc(state, 'isLoaded', true);
 			break;
+		case SET_LOCATION:
+			return mori.assoc(state, 'location', mori.toClj(action.payload));
 		default:
 			return state;
 	}
@@ -74,7 +109,7 @@ Subscription & PropsMaps
 ----------------------------------------------------------*/
 
 function getSubscription(store, props) {
-	return store.subscribe(selectApp);
+	return store.subscribe(selectApp).map(state => mori.hashMap('app', state));
 }
 
 /*----------------------------------------------------------
@@ -85,6 +120,7 @@ export const App = connect(getSubscription)(React.createClass({
 
 	propTypes: {
 		app: React.PropTypes.object,
+		location: React.PropTypes.object
 	},
 
 	getInitialState() {
@@ -102,7 +138,7 @@ export const App = connect(getSubscription)(React.createClass({
 	},
 
 	render() {
-
+		
 		const app = this.props.app;
 		
 		let currentPath;

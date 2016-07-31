@@ -3,29 +3,10 @@ import ReactDOM from 'react-dom';
 import ReactSwipe from 'react-swipe';
 import { Route } from 'react-router';
 import BeachDetail from 'app/common/BeachDetail';
-import AlertDetail from 'app/common/AlertDetail';
 
 /*----------------------------------------------------------
 Component
 ----------------------------------------------------------*/
-
-const page = 1;
-
-const alertId = 'dsfasdf';
-const test_data = {
-	alerts: [
-		{
-			name: 'LOWER TRESTLES',
-			beach: 'TRIGG BEACH, WA'
-		},
-		{
-			name: 'EASY SURFING',
-			beach: 'COTTESLOE, WA'
-		}
-	]
-};
-
-const alert = test_data.alerts[alertId];
 
 const style = {
 	container: {
@@ -36,13 +17,11 @@ const style = {
 export default React.createClass({
 
 	propTypes: {
-		params: React.PropTypes.object
+		alert: React.PropTypes.object
 	},
 
 	render() {
-		
-		let alert = test_data.alerts[this.props.params.id];
-
+		let alert = this.props.alert;
 		return (
 			<div className="card-detail dialog">
 				<div className="dialog__header">
@@ -63,7 +42,9 @@ export default React.createClass({
 						style={style}
 					>
 						<BeachDetail alert={alert} />
-						<AlertDetail alert={alert} />
+						<div className="carousel__content">
+							alertDetail
+						</div>
 					</ReactSwipe>
 				</div>
 			</div>

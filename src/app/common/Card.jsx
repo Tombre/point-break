@@ -1,19 +1,28 @@
 import React from 'react';
+import { withRouter } from 'react-router';
 
 /*----------------------------------------------------------
 Component
 ----------------------------------------------------------*/
 
-export default React.createClass({
+export default withRouter(React.createClass({
+	
 	propTypes: {
+		router: React.PropTypes.object,
 		alert: React.PropTypes.object
 	},
+
+	handleCardClick() {
+		// console.log(this..alert);
+		this.props.router.push(`/alerts/${this.props.alert.id}/`);
+	},
+
 	render() {
 		let { alert } = this.props;
 		return (
-			<div className="card">
-				<div className="card__bg">
-				</div>
+			<div className="card" onClick={this.handleCardClick}>
+				
+				<div className="card__bg"></div>
 				<div className="card__content">
 
 					<div className="card__head">
@@ -63,4 +72,4 @@ export default React.createClass({
 		);
 	}
 
-});
+}));

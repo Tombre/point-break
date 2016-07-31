@@ -64,12 +64,12 @@ function throwAPIRequestError(error, response, params) {
 	type = type || errorTypes.ERROR_API_UNKOWN;
 
 	let errorParams = {
-		response: error.response,
+		response: error.response || {},
 		status: error.status,
 		request: params
 	};
 
-	let msg = `API error: cannot ${params.method} ${params.url}${params.query ? ':' + JSON.stringify(params.query) : null} (${error.response.statusCode}) ${error.response.statusText}`;
+	let msg = `API error: cannot ${params.method} ${params.url}${params.query ? ':' + JSON.stringify(params.query) : null} (${errorParams.response.statusCode}) ${errorParams.response.statusText}`;
 	
 	return createError(type, errorParams, msg);
 }

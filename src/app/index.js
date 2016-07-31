@@ -9,7 +9,7 @@ import { App as App, reducer as APP } from './app';
 
 import NotFoundPage from './error/NotFoundPage.jsx';
 import Alerts from 'app/alerts/Alerts';
-import CardDetail from 'app/common/CardDetail';
+import AlertDetail from 'app/alerts/AlertDetail';
 import Discover from 'app/discover/Discover';
 import NewAlert from 'app/newAlert/NewAlert';
 import LocalFeed from 'app/localFeed/LocalFeed';
@@ -42,22 +42,16 @@ const Root = React.createClass({
 
 	loadSessionAndResources: function(nextState, replace, callback) {
 
+		return callback();
+
 		request
 			.get('http://192.168.2.110:4001/auth/hack/')
 			.end((error, response) => {
-				if (error) return;
+				if (error) return callback();
 				let {pointbreak_auth} = JSON.parse(response.text);
 				cookies.set('pointbreak_auth', pointbreak_auth);
-
-				// request.get('http://192.168.2.110:4001/api/alarm')
-				// 	.end((err, res) => {
-				// 		console.log(res);
-				// 	})
-
 				callback();
 			});
-
-		// let { dispatch, getState } = this.props.store;
 		
 	},
 
@@ -73,7 +67,7 @@ const Root = React.createClass({
 						<Route path="localfeed" component={LocalFeed} />
 					</Route>
 					<Route path="alerts/new" component={NewAlert} />
-					<Route path="alerts/:id" component={CardDetail} />
+					<Route path="alerts/:id" component={AlertDetail} />
 					<Route path="*" component={NotFoundPage} />
 				</Router>
 			</Provider>

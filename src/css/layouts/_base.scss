@@ -2,6 +2,10 @@
 	Parent
 -----------------------------------------------------*/
 
+html {
+	background-color: #f3f3f3;
+}
+
 body {
 	font-family: 'Open Sans', sans-serif;
 }
@@ -18,4 +22,6 @@ body {
 
 #wrapper {
 	padding: 1rem;
+	position: relative;
+	z-index: 1;
 }

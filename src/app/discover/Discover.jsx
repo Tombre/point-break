@@ -4,6 +4,7 @@ import connect from 'store/connect';
 import { loadDiscoverAlarms } from 'app/discover/discover_store';
 import { selectData } from 'store/data';
 import CardList from 'app/common/CardList';
+import DiscoverFilter from 'app/discover/DiscoverFilter';
 
 /*----------------------------------------------------------
 Config
@@ -35,7 +36,7 @@ Subscription & PropsMaps
 ----------------------------------------------------------*/
 
 function getSubscription(store, props) {
-	return store.subscribe(selectData.alarm).map(alerts => {
+	return store.subscribe(selectData.location).map(alerts => {
 		return mori.hashMap('alerts', mori.vals(alerts));
 	});
 }
@@ -51,7 +52,14 @@ export default connect(getSubscription, { loadDiscoverAlarms })(React.createClas
 		alerts: React.PropTypes.array
 	},
 
+	getInitialState() {
+		return {
+			loaded: false
+		};
+	},
+
 	componentDidMount() {
+		let setLoaded = () => this.setState({ loaded: true });
 		this.props.loadDiscoverAlarms();
 	},
 
@@ -60,17 +68,7 @@ export default connect(getSubscription, { loadDiscoverAlarms })(React.createClas
 		let alerts = this.props.alerts || [];
 
 		return <div className="page--create">
-			<div className="filter filter--discover">
-				<div className="filter__item filter__item--active">
-					Nearby
-				</div>
-				<div className="filter__item">
-					Popular
-				</div>
-				<div className="filter__item">
-					Search
-				</div>
-			</div>
+			<DiscoverFilter />
 			<CardList alerts={alerts}/>
 		</div>
 	}
