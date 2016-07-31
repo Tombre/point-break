@@ -42,6 +42,8 @@ const Root = React.createClass({
 
 	loadSessionAndResources: function(nextState, replace, callback) {
 
+		return callback();
+
 		request
 			.get('http://192.168.2.110:4001/auth/hack/')
 			.end((error, response) => {

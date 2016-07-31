@@ -27,7 +27,6 @@ export default connect(getSubscription, { loadMyAlerts })(React.createClass({
 	},
 
 	componentDidMount() {
-		let setLoaded = () => this.setState({ loaded: true });
 		this.props.loadMyAlerts();
 	},
 
