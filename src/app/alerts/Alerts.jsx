@@ -32,7 +32,7 @@ export default connect(getSubscription, { loadMyAlerts })(React.createClass({
 	},
 
 	render() {
-		let alerts = this.props.alerts || [];
+		let alerts = this.props.alerts || [{ title : 'Test' }];
 		return <div className="page--view">
 			<CardList alerts={alerts}/>
 		</div>

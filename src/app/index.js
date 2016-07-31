@@ -9,7 +9,7 @@ import { App as App, reducer as APP } from './app';
 
 import NotFoundPage from './error/NotFoundPage.jsx';
 import Alerts from 'app/alerts/Alerts';
-import CardDetail from 'app/common/CardDetail';
+import AlertDetail from 'app/alerts/AlertDetail';
 import Discover from 'app/discover/Discover';
 import NewAlert from 'app/newAlert/NewAlert';
 import LocalFeed from 'app/localFeed/LocalFeed';
@@ -65,7 +65,7 @@ const Root = React.createClass({
 						<Route path="localfeed" component={LocalFeed} />
 					</Route>
 					<Route path="alerts/new" component={NewAlert} />
-					<Route path="alerts/:id" component={CardDetail} />
+					<Route path="alerts/:id" component={AlertDetail} />
 					<Route path="*" component={NotFoundPage} />
 				</Router>
 			</Provider>

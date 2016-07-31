@@ -4,6 +4,7 @@ import connect from 'store/connect';
 import { loadDiscoverAlarms } from 'app/discover/discover_store';
 import { selectData } from 'store/data';
 import CardList from 'app/common/CardList';
+import DiscoverFilter from 'app/discover/DiscoverFilter';
 
 /*----------------------------------------------------------
 Config
@@ -67,17 +68,7 @@ export default connect(getSubscription, { loadDiscoverAlarms })(React.createClas
 		let alerts = this.props.alerts || [];
 
 		return <div className="page--create">
-			<div className="filter filter--discover">
-				<div className="filter__item filter__item--active">
-					Nearby
-				</div>
-				<div className="filter__item">
-					Popular
-				</div>
-				<div className="filter__item">
-					Search
-				</div>
-			</div>
+			<DiscoverFilter />
 			<CardList alerts={alerts}/>
 		</div>
 	}

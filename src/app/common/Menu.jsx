@@ -26,7 +26,7 @@ export default withRouter(React.createClass({
 
 	render() {
 		return <div className="main-menu">
-			<a href="#" className="main-menu__close" onClick={this.handleCloseClick}>X</a>
+			<a href="#" className="main-menu__close button__close" onClick={this.handleCloseClick}>Close</a>
 			<ul className="main-menu__list">
 				<li className="main-menu__list__item">
 					<a href="#" onClick={_.partial(this.handleMenuClick, 'report')} className="menu-link" >
