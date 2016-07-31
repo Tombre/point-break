@@ -58,4 +58,61 @@ export const getAvatarID = function(user) {
 		return memo + value.slice(0, 1);
 	}, '');
 	return avatarID;
-},
+};
+
+export const angleToDirection = function(angle) {
+	var direction = '';
+	if(angle >= 0 && angle < 11.25) {
+		direction = 'N';
+	}
+	else if(angle >= 11.25 && angle < 33.75) {
+		direction = 'NNE';
+	}
+	else if(angle >= 33.75 && angle < 56.25) {
+		direction = 'NE';
+	}
+	else if(angle >= 56.25 && angle < 78.75) {
+		direction = 'ENE';
+	}
+	else if(angle >= 78.75 && angle < 101.25) {
+		direction = 'E';
+	}
+	else if(angle >= 101.25 && angle < 123.75) {
+		direction = 'ESE';
+	}
+	else if(angle >= 123.75 && angle < 146.25) {
+		direction = 'SE';
+	}
+	else if(angle >= 146.25 && angle < 168.75) {
+		direction = 'SSE';
+	}
+	else if(angle >= 168.75 && angle < 191.25) {
+		direction = 'S';
+	}
+	else if(angle >= 191.25 && angle < 213.75) {
+		direction = 'SSW';
+	}
+	else if(angle >= 213.75 && angle < 236.25) {
+		direction = 'SW';
+	}
+	else if(angle >= 236.25 && angle < 258.75) {
+		direction = 'WSW';
+	}
+	else if(angle >= 258.75&& angle < 281.25) {
+		direction = 'W';
+	}
+	else if(angle >= 281.25 && angle < 303.75) {
+		direction = 'WNW';
+	}
+	else if(angle >= 303.75&& angle < 326.25) {
+		direction = 'NW';
+	}
+	else if(angle >= 326.25 && angle < 348.75) {
+		direction = 'NNW';
+	}
+	else if(angle >= 348.75 && angle < 360) {
+		direction = 'N';
+	}
+
+	return direction;
+}
