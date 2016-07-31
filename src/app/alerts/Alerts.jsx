@@ -20,7 +20,7 @@ Component
 ----------------------------------------------------------*/
 
 export default connect(getSubscription, { loadMyAlerts })(React.createClass({
-	
+
 	propTypes: {
 		loadMyAlerts: React.PropTypes.func,
 		alerts: React.PropTypes.array
@@ -33,6 +33,32 @@ export default connect(getSubscription, { loadMyAlerts })(React.createClass({
 	render() {
 		let alerts = this.props.alerts || [{ title : 'Test' }];
 		return <div className="page--view">
+			<div className="card-alert">
+				<div className="card-alert__content">
+
+					<div className="card-alert__head">
+						<div className="card-alert__heading card-alert__heading--center">
+							Warning
+						</div>
+					</div>
+
+					<div className="card-alert__body">
+						<div className="card-alert__body-icon">
+							I
+						</div>
+						<div className="card-alert__body-col">
+							<div className="card-alert__body-heading">
+								NNW
+							</div>
+							<div className="card-alert__body-subheading">
+								Wind
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+
 			<CardList alerts={alerts}/>
 		</div>
 	}
