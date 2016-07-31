@@ -1,4 +1,6 @@
 import React from 'react';
+import TextInput from 'app/common/inputs/TextInput';
+import SelectInput from 'app/common/inputs/SelectInput';
 
 /*----------------------------------------------------------
 Component

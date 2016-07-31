@@ -1,4 +1,6 @@
 import React from 'react';
+import TextInput from 'app/common/inputs/TextInput';
+import SingleSelectList from 'app/common/inputs/SingleSelectList';
 
 /*----------------------------------------------------------
 Component
@@ -12,12 +14,8 @@ export default React.createClass({
 		return (
 			<div className="form-input">
 				<div className="form-input__row">
-					<label>Location</label>
-					<TextInput placeholder="Enter name of beach" type="small" />
-				</div>
-				<div className="form-input__row">
-					<label>Distance</label>
-					<SelectInput className="distance" options={this.props.distance} />
+					<label>Skill</label>
+					<SingleSelectList className="skill" options={['Beginner', 'Intermediate', 'Advanced']} default="Beginner" />
 				</div>
 			</div>
 		);

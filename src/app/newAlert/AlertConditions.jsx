@@ -1,23 +1,23 @@
 import React from 'react';
+import HorizontalSelectList from 'app/common/inputs/HorizontalSelectList';
 
 /*----------------------------------------------------------
 Component
 ----------------------------------------------------------*/
 
 export default React.createClass({
-	propTypes: {
-		distance: React.PropTypes.array
-	},
+	
 	render() {
 		return (
-			<div className="form-input">
-				<div className="form-input__row">
-					<label>Location</label>
-					<TextInput placeholder="Enter name of beach" type="small" />
+			<div className="form__row centered">
+				<div className="form__row--label">
+					<label>Alert me if:</label>
 				</div>
-				<div className="form-input__row">
-					<label>Distance</label>
-					<SelectInput className="distance" options={this.props.distance} />
+				<div className="form__row--value">
+					<HorizontalSelectList 
+						className="conditions" 
+						options={['Custom Conditions', 'Like Past Conditions', 'Current Conditions']} 
+						default="Current Conditions" />
 				</div>
 			</div>
 		);
