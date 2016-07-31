@@ -38,16 +38,12 @@ export default withRouter(connect(null, { getLocation, postNewAlerts })(React.cr
 
 	handleSend() {
 
-		console.log(this.state);
-
 		if (
 			!this.state.title.length ||
 			!this.state.description.length
 		) {
 			return;
 		}
-
-		
 
 		let onComplete = this.props.router.push(`/alerts/`);
 
