@@ -37,7 +37,7 @@ export default withRouter(React.createClass({
 					<div className="card__head">
 
 						<div className="card__difficulty">
-							<div className="card__difficulty-tag">
+							<div className="card__difficulty-tag card__difficulty-tag--beginner">
 								Beginner
 							</div>
 						</div>
