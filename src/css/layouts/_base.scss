@@ -21,6 +21,8 @@ body {
 }
 
 #wrapper {
+	height: calc(100vh - 175px);
+	overflow: scroll;
 	padding: 1rem;
 	position: relative;
 	z-index: 1;

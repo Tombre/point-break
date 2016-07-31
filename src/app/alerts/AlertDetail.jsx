@@ -4,7 +4,7 @@ import { find, where, pluck } from 'helper/mori';
 import { Route } from 'react-router';
 import { selectData } from 'store/data';
 import connect from 'store/connect';
-import CardDetail from 'app/common/CardDetail';
+import Card from 'app/common/Card';
 
 /*----------------------------------------------------------
 Subscription
@@ -36,7 +36,7 @@ export default connect()(React.createClass({
 	},
 
 	render() {
-		return <CardDetail alert={this.props.alert} />
+		return <Card alert={alert} />
 	}
 
 }));
