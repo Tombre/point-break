@@ -14,6 +14,8 @@ import Discover from 'app/discover/Discover';
 import NewAlert from 'app/newAlert/NewAlert';
 import LocalFeed from 'app/localFeed/LocalFeed';
 
+import Info from 'app/info/Info';
+
 import cookies from 'js-cookie';
 import request from 'superagent';
 
@@ -68,6 +70,7 @@ const Root = React.createClass({
 					</Route>
 					<Route path="alerts/new" component={NewAlert} />
 					<Route path="alerts/:id" component={AlertDetail} />
+					<Route path="info" component={Info} />
 					<Route path="*" component={NotFoundPage} />
 				</Router>
 			</Provider>
