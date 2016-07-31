@@ -22,7 +22,7 @@ import request from 'superagent';
 // const cookie = cookies.get('pointbreak_auth');
 
 // if (!cookie) {
-// 	window.location = 'http://192.168.2.110:4001/auth/github';
+// 	window.location = 'http://52.62.76.183:4001/auth/github';
 // }
 
 /*----------------------------------------------------------
@@ -47,7 +47,7 @@ const Root = React.createClass({
 		return callback();
 
 		request
-			.get('http://192.168.2.110:4001/auth/hack/')
+			.get('http://52.62.76.183:4001/auth/hack/')
 			.end((error, response) => {
 				if (error) return callback();
 				let {pointbreak_auth} = JSON.parse(response.text);
