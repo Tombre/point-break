@@ -1,5 +1,5 @@
 import React from 'react';
-import Card from 'app/common/Card';
+import Card from 'app/discover/discover_card';
 
 /*----------------------------------------------------------
 Component

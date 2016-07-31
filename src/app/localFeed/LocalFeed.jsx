@@ -31,16 +31,36 @@ export default connect(getSubscription, { loadMyFeed })(React.createClass({
 		this.props.loadMyFeed();
 	},
 
+	renderCard(feed, index) {
+		return <div className="card" key={index}>
+			<div className="card__content">
+					<div className="card__difficulty">
+							<div className="card__difficulty-tag card__difficulty-tag--warning">
+								Warning
+							</div>
+						</div>
+
+					<div className="card__heading">
+						{feed.type}
+					</div>
+
+					<div className="card__subheading">
+						{feed.provider}
+					</div>
+			</div>
+		</div>
+	},
+
 	render() {
 
 		let feed = this.props.feed || [];
 
+		console.log(feed);
+
 		return <div className="localFeed">
-			{feed.map((feedling, index) => {
-				return <div key={index}>
-					<p>{feedling.type}</p>
-				</div>;
-			})}
+			<div className="card-list">
+				{feed.map((feedling, index) => this.renderCard(feedling, index))}
+			</div>
 		</div>
 	}
 

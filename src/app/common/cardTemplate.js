@@ -1,53 +1,14 @@
-import React from 'react';
-import { withRouter } from 'react-router';
-import { angleToDirection } from 'helper/user';
-
-/*----------------------------------------------------------
-Component
-----------------------------------------------------------*/
-
-export default withRouter(React.createClass({
-
-	propTypes: {
-		router: React.PropTypes.object,
-		alert: React.PropTypes.object
-	},
-
-	handleCardClick() {
-		// console.log(this..alert);
-		// this.props.router.push(`/alerts/${this.props.alert.id}/`);
-	},
-
-	getWindSpeed(range) {
-		if (!range) return `10km/h`;
-		let avg = (range[0] * range[1]) /2;
-		return `${avg}km/h`;
-	},
-
-	getTide(range) {
-		if (!range) return 'Low';
-		let avg = (range[0] * range[1]) /2;
-		if (avg > 2.5) {
-			return 'High';
-		}
-		return 'Low';
-	},
-
-	getDirection(range) {
-		if (!range) return 'NW';
-		let deg = (range[0] * range[1]) /2;
-		return angleToDirection(deg);
-	},
-
-	render() {
-		let { alert } = this.props;
-		alert = alert || {};
-		
-		console.log(alert);
-
-		return (
 
 			<div className="card" onClick={this.handleCardClick}>
+
+				<div className="card__pre">
+					<div className="card__pre-left">
+						Trigg Beach, WA
+					</div>
+					<div className="card__pre-right">
+						Less than 1km away
+					</div>
+				</div>
 
 				<div className="card__content">
 
@@ -103,7 +64,7 @@ export default withRouter(React.createClass({
 								Swell Direction
 							</div>
 							<div className="card__table-col--right">
-								{this.getDirection(alert.swell_direction)}
+								SSW
 							</div>
 						</div>
 						<div className="card__table-row">
@@ -111,7 +72,7 @@ export default withRouter(React.createClass({
 								Wind
 							</div>
 							<div className="card__table-col--right">
-								{this.getWindSpeed(alert.wind_speed)} {this.getDirection(alert.wind_direction)}
+								{this.getWindSpeed(alert.wind_speed)} NNW
 							</div>
 						</div>
 						<div className="card__table-row">
@@ -135,7 +96,7 @@ export default withRouter(React.createClass({
 						</div>
 						<div className="card__body-col">
 							<div className="card__body-heading">
-								{this.getDirection(alert.wind_direction)}
+								NNW
 							</div>
 							<div className="card__body-subheading">
 								Wind
@@ -161,17 +122,11 @@ export default withRouter(React.createClass({
 						</div>
 					</div>
 				</div>
+
+
+				<div className="card__expand">
+					<div className="card__expand-col">
+						+11 other alerts
+					</div>
+				</div>
 			</div>
-		);
-	}
-
-}));
-
-// <div className="card__footer">
-// 	<div className="card__footer-col card__footer-col--left">
-// 		Surfing
-// 	</div>
-// 	<div className="card__footer-col card__footer-col--right">
-// 		Swimming
-// 	</div>
-// </div>

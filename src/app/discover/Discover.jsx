@@ -3,33 +3,13 @@ import mori from 'mori';
 import connect from 'store/connect';
 import { loadDiscoverAlarms } from 'app/discover/discover_store';
 import { selectData } from 'store/data';
-import CardList from 'app/common/CardList';
+import CardList from 'app/discover/discover_cardList';
 import DiscoverFilter from 'app/discover/DiscoverFilter';
 
 /*----------------------------------------------------------
 Config
 ----------------------------------------------------------*/
 
-const test_data = {
-	alerts: [
-		{
-			name: 'LOWER TRESTLES',
-			beach: 'TRIGG BEACH, WA'
-		},
-		{
-			name: 'EASY SURFING',
-			beach: 'COTTESLOE, WA'
-		},
-		{
-			name: 'LOWER TRESTLES',
-			beach: 'TRIGG BEACH, WA'
-		},
-		{
-			name: 'EASY SURFING',
-			beach: 'COTTESLOE, WA'
-		}
-	]
-};
 
 /*----------------------------------------------------------
 Subscription & PropsMaps
@@ -69,7 +49,7 @@ export default connect(getSubscription, { loadDiscoverAlarms })(React.createClas
 
 		return <div className="page--create">
 			<DiscoverFilter />
-			<CardList alerts={alerts}/>
+			<CardList alerts={alerts} />
 		</div>
 	}
 }));

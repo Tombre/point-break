@@ -1,6 +1,5 @@
 import React from 'react';
 import { withRouter } from 'react-router';
-import { angleToDirection } from 'helper/user';
 
 /*----------------------------------------------------------
 Component
@@ -19,7 +18,7 @@ export default withRouter(React.createClass({
 	},
 
 	getWindSpeed(range) {
-		if (!range) return `10km/h`;
+		if (!range) return 'None';
 		let avg = (range[0] * range[1]) /2;
 		return `${avg}km/h`;
 	},
@@ -31,12 +30,6 @@ export default withRouter(React.createClass({
 			return 'High';
 		}
 		return 'Low';
-	},
-
-	getDirection(range) {
-		if (!range) return 'NW';
-		let deg = (range[0] * range[1]) /2;
-		return angleToDirection(deg);
 	},
 
 	render() {
@@ -103,7 +96,7 @@ export default withRouter(React.createClass({
 								Swell Direction
 							</div>
 							<div className="card__table-col--right">
-								{this.getDirection(alert.swell_direction)}
+								SSW
 							</div>
 						</div>
 						<div className="card__table-row">
@@ -111,7 +104,7 @@ export default withRouter(React.createClass({
 								Wind
 							</div>
 							<div className="card__table-col--right">
-								{this.getWindSpeed(alert.wind_speed)} {this.getDirection(alert.wind_direction)}
+								{this.getWindSpeed(alert.wind_speed)} NNW
 							</div>
 						</div>
 						<div className="card__table-row">
@@ -135,7 +128,7 @@ export default withRouter(React.createClass({
 						</div>
 						<div className="card__body-col">
 							<div className="card__body-heading">
-								{this.getDirection(alert.wind_direction)}
+								NNW
 							</div>
 							<div className="card__body-subheading">
 								Wind

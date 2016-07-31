@@ -31,7 +31,10 @@ export default connect(getSubscription, { loadMyAlerts })(React.createClass({
 	},
 
 	render() {
-		let alerts = this.props.alerts || [{ title : 'Test' }];
+		
+		let alerts = this.props.alerts || [];
+		alerts.reverse(); 
+
 		return <div className="page--view">
 			<div className="card-alert">
 				<div className="card-alert__content">
