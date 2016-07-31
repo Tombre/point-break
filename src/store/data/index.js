@@ -256,7 +256,7 @@ export const saveChangesMiddleware = store => next => action => {
 	next(action);
 
 	let params = {
-		url : '/api' + schema[action.payload.collectionName].endpoint
+		url : 'http://192.168.2.110:4001/api' + schema[action.payload.collectionName].endpoint
 	};
 
 	switch (action.type) {
