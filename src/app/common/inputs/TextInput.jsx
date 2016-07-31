@@ -18,7 +18,9 @@ export default React.createClass({
 	handleOnChange(e) {
 		let value = e.target.value;
 		this.setState({ value });
-		this.props.onChange(value);
+		if (this.props.onChange) {
+			this.props.onChange(value);
+		}
 	},
 
 	render() {

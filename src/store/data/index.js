@@ -214,7 +214,7 @@ export const fetchDataMiddleware = store => next => action => {
 
 	let options = action.payload;
 	let params = {
-		url : 'http://192.168.2.110:4001/api' + schema[options.collectionName].endpoint,
+		url : 'http://52.62.76.183:4001/api' + schema[options.collectionName].endpoint,
 		query : options.query,
 		method : 'GET'
 	};
@@ -256,7 +256,7 @@ export const saveChangesMiddleware = store => next => action => {
 	next(action);
 
 	let params = {
-		url : 'http://192.168.2.110:4001/api' + schema[action.payload.collectionName].endpoint
+		url : 'http://52.62.76.183:4001/api' + schema[action.payload.collectionName].endpoint
 	};
 
 	switch (action.type) {
